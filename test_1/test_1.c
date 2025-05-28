@@ -4,8 +4,8 @@
 #define MAX(__x__, __y__) (((__x__) > (__y__)) ? (__x__) : (__y__))
 #define MIN(__x__, __y__) (((__x__) < (__y__)) ? (__x__) : (__y__))
 
-#define L_SHIFT(__x__, __y__) ((__x__) < (__y__))
-#define R_SHIFT(__x__, __y__) ((__x__) > (__y__))
+#define L_SHIFT(__x__, __y__) ((__x__) << (__y__))
+#define R_SHIFT(__x__, __y__) ((__x__) >> (__y__))
 
 int main(int argc, char* argv[])
 {   
