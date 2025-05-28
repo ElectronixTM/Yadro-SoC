@@ -16,7 +16,7 @@ int main(int argc, char* argv[])
   {
     printf("%02x ", p[i]);
   }
-  puts("\nI think i figured it out. Data type was wrong");
+  puts("\b"); // delete extra whitespace
   puts(x[0] > x[1] ? "0 > 1" : "1 > 0");
   puts(x[1] > x[2] ? "1 > 2" : "2 > 1");
   return 0;
