@@ -24,9 +24,9 @@ ulong main(uint param_1,ulong param_2)
     *(puVar1 + -0x40) = *(-0x58 + 0x12008);
     puVar1[-0x38] = *(-0x58 + 0x12010);
     for (int i = 0; i < 10; i++)
-        int encodable_symbole = string_to_encode[i]; // сначала сомневался, но так и в ассемблере. Грузится явно больше чем следует
-        int uppef_half = encodable_symbole >> 4;
-        lower_half = encodable_symbole - (uppef_half << 4); // ???
+        int encodable_symbol = string_to_encode[i]; // сначала сомневался, но так и в ассемблере. Грузится явно больше чем следует
+        int uppef_half = encodable_symbol >> 4;
+        int lower_half = encodable_symbol - (uppef_half << 4); // ???
         print_char(encode_lookup[upper_half])
         print_char(encode_lookup[lower_half])
     }
