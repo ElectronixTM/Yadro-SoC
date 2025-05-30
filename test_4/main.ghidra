@@ -1,0 +1,39 @@
+                                                |
+    0x000101a6 addi sp, sp, -96                 |ulong fcn.000101a6(uint param_1,ulong param_2)
+                                                |
+                                                |{
+                                                |    uchar *puVar1;
+                                                |    ulong uStack_60;
+                                                |    uint auStack_54 [3];
+                                                |    ulong uStack_48;
+                                                |    ulong uStack_40;
+                                                |    uchar auStack_38 [8];
+                                                |    ulong uStack_30;
+                                                |    ushort uStack_28;
+                                                |    uchar auStack_26 [2];
+                                                |    int32_t aiStack_24 [3];
+                                                |    uint64_t uStack_18;
+                                                |    
+    0x000101a6 addi sp, sp, -96                 |    puVar1 = &stack0x00000000;
+    0x000101b0 sd a1, -96(s0)                   |    *(ulong *)(puVar1 + -0x60) = param_2;
+    0x000101b4 sw a5, -84(s0)                   |    *(uint *)(puVar1 + -0x54) = param_1;
+    0x000101c0 sd a4, -48(s0)                   |    *(ulong *)(puVar1 + -0x30) = *(ulong *)(segment.LOAD1 + -0x68);
+    0x000101c8 sh a4, -40(s0)                   |    *(ushort *)(puVar1 + -0x28) = *(ushort *)(-0x68 + 0x12008);
+    0x000101d0 sb a5, -38(s0)                   |    puVar1[-0x26] = *(uchar *)(-0x68 + 0x1200a);
+    0x000101dc sd a4, -72(s0)                   |    *(ulong *)(puVar1 + -0x48) = *(ulong *)(segment.LOAD1 + -0x58);
+    0x000101e2 sd a4, -64(s0)                   |    *(ulong *)(puVar1 + -0x40) = *(ulong *)(-0x58 + 0x12008);
+    0x000101ea sb a5, -56(s0)                   |    puVar1[-0x38] = *(uchar *)(-0x58 + 0x12010);
+    0x000101ee sd zero, -24(s0)                 |    *(ulong *)(puVar1 + -0x18) = 0;
+    0x0001025e bleu a4, a5, 0x101f4             |    while( true ) {
+    0x0001025e bleu a4, a5, 0x101f4             |        if (10 < *(uint64_t *)(puVar1 + -0x18)) break;
+    0x00010200 sw a5, -28(s0)                   |        *(int32_t *)(puVar1 + -0x1c) = (int32_t)(char)puVar1[*(int64_t *)(puVar1 + -0x18) + -0x30];
+    0x0001020c sw a5, -32(s0)                   |        *(int32_t *)(puVar1 + -0x20) = *(int32_t *)(puVar1 + -0x1c) >> 4;
+    0x00010222 sw a5, -36(s0)                   |        *(int32_t *)(puVar1 + -0x24) = *(int32_t *)(puVar1 + -0x1c) - ((*(int32_t *)(puVar1 + -0x20) << 4) + 0);
+    0x00010236 jal ra, fcn.00010650             |        fcn.00010650((uint32_t)(uint8_t)puVar1[(int64_t)*(int32_t *)(puVar1 + -0x20) + -0x48] + 0);
+    0x0001024a jal ra, fcn.00010650             |        fcn.00010650((uint32_t)(uint8_t)puVar1[(int64_t)*(int32_t *)(puVar1 + -0x24) + -0x48] + 0);
+    0x00010254 sd a5, -24(s0)                   |        *(int64_t *)(puVar1 + -0x18) = *(int64_t *)(puVar1 + -0x18) + 1;
+                                                |    }
+    0x00010264 jal ra, fcn.00010650             |    fcn.00010650(10);
+    0x00010272 ret                              |    return 0;
+                                                |}
+                                                |

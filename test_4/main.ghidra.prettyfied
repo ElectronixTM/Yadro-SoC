@@ -1,0 +1,36 @@
+ulong main(uint param_1,ulong param_2)
+
+{
+    uchar *puVar1;
+    ulong uStack_60;
+    uint auStack_54 [3];
+    ulong uStack_48;
+    ulong uStack_40;
+    uchar auStack_38 [8];
+    ulong uStack_30;
+    ushort uStack_28;
+    uchar auStack_26 [2];
+    int32_t aiStack_24 [3];
+    uint64_t uStack_18;
+    
+    puVar1 = &stack0x00000000;
+     // обязаны сохранить по конвенциям
+    *(puVar1 + -0x60) = param_2;
+    *(puVar1 + -0x54) = param_1;
+    string_to_encode = *(segment.LOAD1 + -0x68); // "DUfw"
+    *(puVar1 + -0x28) = *(-0x68 + 0x12008);
+    puVar1[-0x26] = *(-0x68 + 0x1200a);
+    encode_lookup = *(segment.LOAD1 + -0x58); // "0123456789ABCDEF"
+    *(puVar1 + -0x40) = *(-0x58 + 0x12008);
+    puVar1[-0x38] = *(-0x58 + 0x12010);
+    for (int i = 0; i < 10; i++)
+        int encodable_symbole = string_to_encode[i]; // сначала сомневался, но так и в ассемблере. Грузится явно больше чем следует
+        int uppef_half = encodable_symbole >> 4;
+        lower_half = encodable_symbole - (uppef_half << 4); // ???
+        print_char(encode_lookup[upper_half])
+        print_char(encode_lookup[lower_half])
+    }
+    print_char('\n');
+    return 0;
+}
+
